@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+
 
 namespace MaisAprendizado.Data
 {
     public class Data : IDisposable
     {
-        //Atributo que vai permitir conectar com o Banco de dados
+        //Atributo : vai nos permitir  conectar com o Banco de Dados
         protected SqlConnection connectionDB;
 
         //Construtor
@@ -16,24 +17,24 @@ namespace MaisAprendizado.Data
         {
             try
             {
-                //string de conexão dom o Banco de Dados
-                string strConxao = @"Data source = localhost; 
-                                Initial Catalog = MaisAprendizado; 
-                                Integrated Security = true;";
-                ConnectionDB = new SqlConnection(strConxao);
-                ConnectionDB.Open();
-            }
-            catch
-            {
+                //String de conexão com o Banco de Dados
+                string strConexao = @"Data source = localhost;
+                                    Initial Catalog = Interdisciplinar;
+                                    Integrated Security=true;"; //Autentcação do Windows
+                                                                //User Id=sa; Password=dba; //Autenticação SQL Server
 
+                connectionDB = new SqlConnection(strConexao);
+
+                connectionDB.Open();
+            }
+            catch (SqlException er)
+            {
+                Console.WriteLine("Erro do banco " + er);
             }
         }
-
-        protected SqlConnection ConnectionDB { get => connectionDB; set => connectionDB = value; }
-
         public void Dispose()
         {
-            throw new NotImplementedException();
+            connectionDB.Close();
         }
     }
 }
