@@ -62,6 +62,7 @@ namespace MaisAprendizado.Data
             Pessoa cliente = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
+            cmd.CommandText = @"SELECT * FROM Pessoas WHERE Id = @id"
 
         }
         //Update - UPDATE
