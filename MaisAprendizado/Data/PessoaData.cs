@@ -59,11 +59,22 @@ namespace MaisAprendizado.Data
         //Sobrecarga
         public Pessoa Read(int id)
         {
-            Pessoa cliente = null;
+            Pessoa pessoa = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"SELECT * FROM Pessoas WHERE Id = @id"
-
+            cmd.CommandText = @"SELECT * FROM Pessoas WHERE Id = @id";
+            cmd.Parameters.AddWithValue(@"id", id);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                pessoa = new Pessoa();
+                pessoa.IdPessoa = (int)reader["IdPessoa"];
+                pessoa.Nome = (int)reader["Nome"];
+                pessoa.Email = (int)reader["Email"];
+                pessoa.DataNascimento = (int)reader["DataNascimento"];
+                pessoa.Senha = (int)reader["Senha"];
+            }
+            return pessoa;
         }
         //Update - UPDATE
         //public void Update()
