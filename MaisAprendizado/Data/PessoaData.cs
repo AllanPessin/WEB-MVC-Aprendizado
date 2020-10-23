@@ -88,6 +88,14 @@ namespace MaisAprendizado.Data
             cmd.Parameters.AddWithValue = ("@Senha", pessoa.Senha);
             cmd.ExecuteNonQuery();
         }
-        //public void Update()
+        //Delete - DELETE
+        public void Delete(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = IdPessoa";
+            cmd.Parameters.AddWithValue = ("@id", id);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
