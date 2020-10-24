@@ -16,6 +16,9 @@ namespace MaisAprendizado.Data
             cmd.Connection = connectionDB;
             cmd.CommandText = @"EXEC AdicionarProfessor @Nome, @Email, @DataNascimetno, @Senha, @Credito";
             cmd.Parameters.AddWithValue("@Nome", professor.Credito);
+            cmd.Parameters.AddWithValue("@Email", professor.Nome);
+            cmd.Parameters.AddWithValue("@DataNascimento", professor.DataNascimento);
+            cmd.Parameters.AddWithValue("@Senha", professor.Senha);
             cmd.ExecuteNonQuery();
         }
         //Read - SELECT
