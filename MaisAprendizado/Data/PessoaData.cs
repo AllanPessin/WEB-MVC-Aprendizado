@@ -81,11 +81,12 @@ namespace MaisAprendizado.Data
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"UPDATE Pessoa SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento, Senha = @senha WHERE IdPessao = @IdPessoa";
-            cmd.Parameters.AddWithValue = ("@Nome", pessoa.Nome);
-            cmd.Parameters.AddWithValue = ("@Email", pessoa.Email);
-            cmd.Parameters.AddWithValue = ("@DataNascimento", pessoa.DtaNascimento);
-            cmd.Parameters.AddWithValue = ("@Senha", pessoa.Senha);
+            cmd.CommandText = @"UPDATE Pessoa SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento,
+                                Senha = @senha WHERE IdPessao = @IdPessoa";
+            cmd.Parameters.AddWithValue("@Nome", pessoa.Nome);
+            cmd.Parameters.AddWithValue("@Email", pessoa.Email);
+            cmd.Parameters.AddWithValue("@DataNascimento", pessoa.DtaNascimento);
+            cmd.Parameters.AddWithValue("@Senha", pessoa.Senha);
             cmd.ExecuteNonQuery();
         }
         //Delete - DELETE
