@@ -14,8 +14,11 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"EXEC AdicionarAluno @Nome, @Email, @DataNascimetno, @Senha, @Telefone";
-            cmd.Parameters.AddWithValue("@Nome", aluno.Telefone);
+            cmd.Parameters.AddWithValue("@Nome", aluno.Nome);
             cmd.Parameters.AddWithValue("@Email", aluno.Email);
+            cmd.Parameters.AddWithValue("@DataNascimento", aluno.DataNascimento);
+            cmd.Parameters.AddWithValue("@Senha", aluno.Senha);
+            cmd.Parameters.AddWithValue("@Nome", aluno.Telefone);
             cmd.ExecuteNonQuery();
         }
         //Read - SELECT
@@ -45,7 +48,7 @@ namespace MaisAprendizado.Data
             cmd.Connection = connectionDB;
             cmd.CommandText = @"SELECT * FROM Alunos WHERE @id = AlunoId";
             cmd.Parameters.AddWithValue("@id", AlunoId);
-            SqlDataReader reader = cmd.ExecuteNonQuery();
+            SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read());
             {
                 aluno = new Aluno();

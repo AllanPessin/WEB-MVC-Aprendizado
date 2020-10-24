@@ -77,7 +77,11 @@ namespace MaisAprendizado.Data
         //Delete - DELETE
         public void Delete(int id)
         {
-            Sql
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = Id";
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.ExecuteNonQuery();
         }
     }
 }
