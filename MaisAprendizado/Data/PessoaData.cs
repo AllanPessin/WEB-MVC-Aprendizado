@@ -62,7 +62,7 @@ namespace MaisAprendizado.Data
             Pessoa pessoa = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"SELECT * FROM Pessoas WHERE Id = @id";
+            cmd.CommandText = @"SELECT * FROM Pessoas WHERE ProfessorId = @id";
             cmd.Parameters.AddWithValue(@"id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
@@ -77,9 +77,9 @@ namespace MaisAprendizado.Data
             return pessoa;
         }
         //Update - UPDATE
-        public void Update()
+        public void Update(Pessoa pessoa)
         {
-            SqlCommand cmd = new SqlCommand(Pessoa pessoa);
+            SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"UPDATE Pessoa SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento, Senha = @senha WHERE IdPessao = @IdPessoa";
             cmd.Parameters.AddWithValue = ("@Nome", pessoa.Nome);

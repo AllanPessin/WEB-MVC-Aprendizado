@@ -23,3 +23,10 @@ C:\Users\User\source\repos\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendiza
 C:\Users\User\source\repos\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.RazorTargetAssemblyInfo.cs
 C:\Users\User\source\repos\MaisAprendizado\obj\Debug\netcoreapp3.1\staticwebassets\MaisAprendizado.StaticWebAssets.Manifest.cache
 C:\Users\User\source\repos\MaisAprendizado\obj\Debug\netcoreapp3.1\staticwebassets\MaisAprendizado.StaticWebAssets.xml
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.csprojAssemblyReference.cache
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.AssemblyInfoInputs.cache
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.AssemblyInfo.cs
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.csproj.CoreCompileInputs.cache
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.MvcApplicationPartsAssemblyInfo.cache
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.RazorAssemblyInfo.cache
+D:\Git\Repositorio\WEB-MVC-Aprendizado\MaisAprendizado\obj\Debug\netcoreapp3.1\MaisAprendizado.RazorAssemblyInfo.cs
