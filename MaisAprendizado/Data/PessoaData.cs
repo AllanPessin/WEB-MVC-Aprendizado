@@ -62,8 +62,8 @@ namespace MaisAprendizado.Data
             Pessoa pessoa = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"SELECT * FROM Pessoas WHERE ProfessorId = @id";
-            cmd.Parameters.AddWithValue(@"id", id);
+            cmd.CommandText = @"SELECT * FROM Pessoas WHERE Id = @id";
+            cmd.Parameters.AddWithValue("@Id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
@@ -81,11 +81,11 @@ namespace MaisAprendizado.Data
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"UPDATE Pessoa SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento,
+            cmd.CommandText = @"UPDATE Pessoas SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento,
                                 Senha = @senha WHERE IdPessao = @IdPessoa";
             cmd.Parameters.AddWithValue("@Nome", pessoa.Nome);
             cmd.Parameters.AddWithValue("@Email", pessoa.Email);
-            cmd.Parameters.AddWithValue("@DataNascimento", pessoa.DtaNascimento);
+            cmd.Parameters.AddWithValue("@DataNascimento", pessoa.DataNascimento);
             cmd.Parameters.AddWithValue("@Senha", pessoa.Senha);
             cmd.ExecuteNonQuery();
         }
@@ -95,7 +95,7 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = IdPessoa";
-            cmd.Parameters.AddWithValue = ("@id", id);
+            cmd.Parameters.AddWithValue = ("@Id", id);
             cmd.ExecuteNonQuery();
         }
     }
