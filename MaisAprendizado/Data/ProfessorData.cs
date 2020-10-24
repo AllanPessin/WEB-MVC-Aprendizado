@@ -77,7 +77,7 @@ namespace MaisAprendizado.Data
         //Delete - DELETE
         public void Delete(int id)
         {
-
+            Sql
         }
     }
 }

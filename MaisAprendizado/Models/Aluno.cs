@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaisAprendizado.Models
 {
-    public class Aluno
+    public class Aluno : Pessoa
     {
         public Pessoa Pessoa { get; set; }//is a
 
