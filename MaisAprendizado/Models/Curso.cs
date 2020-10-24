@@ -9,7 +9,7 @@ namespace MaisAprendizado.Models
     public class Curso
     {
         public int? IdCurso { get; set; }
-        public int IdProfessor { get; set; }
+        public int IdPessoa { get; set; }
 
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "Campo nome obrigatório")]
