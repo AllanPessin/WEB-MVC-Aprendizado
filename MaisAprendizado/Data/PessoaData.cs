@@ -69,10 +69,10 @@ namespace MaisAprendizado.Data
             {
                 pessoa = new Pessoa();
                 pessoa.IdPessoa = (int)reader["IdPessoa"];
-                pessoa.Nome = (int)reader["Nome"];
-                pessoa.Email = (int)reader["Email"];
-                pessoa.DataNascimento = (int)reader["DataNascimento"];
-                pessoa.Senha = (int)reader["Senha"];
+                pessoa.Nome = (string)reader["Nome"];
+                pessoa.Email = (string)reader["Email"];
+                pessoa.DataNascimento = (string)reader["DataNascimento"];
+                pessoa.Senha = (string)reader["Senha"];
             }
             return pessoa;
         }
