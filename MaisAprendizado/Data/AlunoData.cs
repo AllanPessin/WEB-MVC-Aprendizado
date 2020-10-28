@@ -22,9 +22,11 @@ namespace MaisAprendizado.Data
             cmd.ExecuteNonQuery();
         }
         //Read - SELECT
-        public LinkedList<Aluno> Read()
+        public List<Aluno> Read()
+            
         {
-            List<Aluno> lista = new List<Aluno>();
+            List<Aluno> lista = null;
+            lista = new List<Aluno>();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"SELEC * FROM Alunos ORDER BY Nome";
@@ -47,12 +49,12 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"SELECT * FROM Alunos WHERE @id = AlunoId";
-            cmd.Parameters.AddWithValue("@id", AlunoId);
+            cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read());
             {
                 aluno = new Aluno();
-                aluno.AlunoId = (int)reader["AlunoId"];
+                aluno.IdPessoa = (int)reader["AlunoId"];
                 aluno.Nome = (string)reader["Nome"];
                 aluno.Email = (string)reader["Email"];
                 aluno.Senha = (string)reader["Senha"];

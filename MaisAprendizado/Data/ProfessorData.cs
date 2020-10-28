@@ -49,11 +49,11 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"SELECT * FROM Professor WHERE @id = Id";
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@id", id);
             SqlDataReader reader = cmd.ExecuteReader();
             if(reader.Read())
             {
-                Professor = new Professor();
+                professor = new Professor();
                 professor.IdPessoa = (int)reader["Id"];
                 professor.Nome = (string)reader["Nome"];
                 professor.Email = (string)reader["Email"];
@@ -80,7 +80,7 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = Id";
-            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
         }
     }
