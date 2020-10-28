@@ -8,7 +8,7 @@ namespace MaisAprendizado.Models
 {
     public class Professor : Pessoa
     {
-        public Pessoa Pessoaa { get; set; }//is a
+        public Pessoa Pessoa { get; set; }//is a
         
         [Display(Name = "Crédito")]
         [DataType(DataType.Currency)]

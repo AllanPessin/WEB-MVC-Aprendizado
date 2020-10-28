@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MaisAprendizado.Data
 {
-    public class AulaGravadaData
+    public class AulaGravadaData : Data
     {
     }
 }
