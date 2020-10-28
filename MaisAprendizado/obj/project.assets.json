@@ -454,19 +454,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Guilherme\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guilherme\\Documents\\GitHub\\WEB-MVC-Aprendizado\\MaisAprendizado\\MaisAprendizado.csproj",
+      "projectUniqueName": "D:\\Git\\Repositorio\\WEB-MVC-Aprendizado\\MaisAprendizado\\MaisAprendizado.csproj",
       "projectName": "MaisAprendizado",
-      "projectPath": "C:\\Users\\Guilherme\\Documents\\GitHub\\WEB-MVC-Aprendizado\\MaisAprendizado\\MaisAprendizado.csproj",
-      "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guilherme\\Documents\\GitHub\\WEB-MVC-Aprendizado\\MaisAprendizado\\obj\\",
+      "projectPath": "D:\\Git\\Repositorio\\WEB-MVC-Aprendizado\\MaisAprendizado\\MaisAprendizado.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Git\\Repositorio\\WEB-MVC-Aprendizado\\MaisAprendizado\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Guilherme\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -513,7 +513,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
