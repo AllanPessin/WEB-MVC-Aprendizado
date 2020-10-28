@@ -60,5 +60,14 @@ namespace MaisAprendizado.Data
             }
             return aluno;
         }
+        //Delete - DELETE
+        public void Delete(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = IdPessoa";
+            cmd.Parameters.AddWithValue("@IdPessoa", id);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
