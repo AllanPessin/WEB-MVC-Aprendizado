@@ -6,13 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MaisAprendizado.Controllers
 {
-    public class LoginController : Controller
+    public class CadastroController : Controller
     {
-        public IActionResult Login()
+        public IActionResult Seletor()
         {
             return View();
         }
-
-       
     }
 }

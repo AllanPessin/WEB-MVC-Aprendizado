@@ -54,6 +54,9 @@ namespace MaisAprendizado
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Login}/{action=Login}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=Cadastro}/{action=Seletor}/{id?}");
             });
         }
     }
