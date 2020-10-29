@@ -34,6 +34,7 @@ namespace MaisAprendizado.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection pessoa)
         {
+            int PessoaId = -1;
             string nome = pessoa["nome"];   //<input name = "nome"
             string email = pessoa["email"]; //<input emal = "email"
             string senha = pessoa["senha"]; //<input senha = "senha"
@@ -48,16 +49,27 @@ namespace MaisAprendizado.Controllers
             novaPessoa.DataNascimento = pessoa["datanascimento"];
             novaPessoa.Telefone =  pessoa["telefone"];
 
-            using (var data = new PessoaData())
-                data.Create(novaPessoa);
-            return RedirectToAction("Index", novaPessoa);
-
+            var professor = new Professor();
+            professor.Nome = pessoa["nome"];
+            professor.Email = pessoa["email"];
+            professor.Senha = pessoa["senha"];
+            professor.DataNascimento = pessoa["datanascimento"];
+            professor.Telefone = pessoa["telefone"];
             try
             {
-                return RedirectToAction(nameof(Index));
+                using (var data = new PessoaData())
+                 novaPessoa.PessoaId = data.Create(novaPessoa);
+                using (var professordata = new ProfessorData())
+                    professordata.Create(professor, novaPessoa);
+                ViewBag.Message = "Sucesso Cadastro";
+                return View();
+
+
+
             }
             catch
             {
+                ViewBag.Message = "Erro Cadastro";
                 return View();
             }
         }

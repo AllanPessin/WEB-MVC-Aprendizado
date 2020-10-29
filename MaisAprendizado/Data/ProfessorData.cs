@@ -10,16 +10,22 @@ namespace MaisAprendizado.Data
     public class ProfessorData : Data
     {
         //Create - INSERT
-        public void Create(Professor professor)
+       
+        public void Create(Professor professor, Pessoa pessoa)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = connectionDB;
-            cmd.CommandText = @"EXEC AdicionarProfessor @Nome, @Email, @DataNascimetno, @Senha, @Credito";
-            cmd.Parameters.AddWithValue("@Nome", professor.Credito);
-            cmd.Parameters.AddWithValue("@Email", professor.Nome);
-            cmd.Parameters.AddWithValue("@DataNascimento", professor.DataNascimento);
-            cmd.Parameters.AddWithValue("@Senha", professor.Senha);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = connectionDB;
+                cmd.CommandText = @"INSERT INTO Professores Values(@ProfessorId, @Credito)";
+                cmd.Parameters.AddWithValue("@ProfessorId", pessoa.PessoaId);
+                cmd.Parameters.AddWithValue("@Credito", professor.Credito);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception error)
+            {
+                return ;
+            }
         }
         //Read - SELECT
         public List<Professor> Read()

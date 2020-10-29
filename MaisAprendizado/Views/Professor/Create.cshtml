@@ -1,0 +1,53 @@
+﻿@model Pessoa
+
+@{
+    Layout = "_LayoutCadastroAlunoProfessor";
+}
+
+
+@if (ViewBag.Message == "Erro Cadastro")
+{
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4 class="text-danger">NÃO FOI POSSÍVEL EFETUAR O CADASTRO!</h4>
+                    <p>
+                        Tente novamente...
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button onclick="" type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<div class="container espacoDiv">
+  
+
+    <div class="container-formulario">
+        @if (ViewBag.Message == "Sucesso Cadastro")
+        {
+            <div class="modal-body">
+                <h4 class="text-success d-flex justify-content-center">Cadastro efetuado com sucesso!</h4>
+            </div>
+
+        }
+        @if (ViewBag.Message == "Erro Cadastro")
+        {
+            
+                        <div class="modal-body">
+                            <h4 class="text-danger">NÃO FOI POSSÍVEL EFETUAR O CADASTRO!</h4>
+                          
+                        </div>
+                       
+        }
+        
+    </div>
+
+</div>
+

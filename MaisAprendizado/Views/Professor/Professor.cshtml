@@ -4,6 +4,44 @@
     Layout = "_LayoutCadastroAlunoProfessor";
 }
 
+@if (ViewBag.Message == "Erro Cadastro")
+{
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4 class="text-danger">NÃO FOI POSSÍVEL EFETUAR O CADASTRO!</h4>
+                    <p>
+                        Tente novamente...
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@if (ViewBag.Message == "Sucesso Cadastro")
+{
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4 class="text-success">Cadastro efetuado com sucesso!</h4>
+                    <p>
+                        Tente novamente...
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
 <div class="container espacoDiv">
 
     <div class="container-formulario">
@@ -25,12 +63,12 @@
                 <div class="col">
                     <label for="exampleInputPassword1">Senha</label>
                     <input type="password" asp-for="Senha" class="form-control" id="exampleInputPassword1" placeholder="Senha">
-                   
+
                 </div>
                 <div class="col">
                     <label for="dataNascimento">Data de Nascimento</label>
                     <input type="date" asp-for="DataNascimento" class="form-control" id="dataNascimento" placeholder="12/08/1999">
-                    
+
                 </div>
                 <div class="col">
                     <label for="telefone">Telefone</label>

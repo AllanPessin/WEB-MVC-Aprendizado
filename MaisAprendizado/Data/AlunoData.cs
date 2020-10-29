@@ -54,7 +54,7 @@ namespace MaisAprendizado.Data
             if (reader.Read());
             {
                 aluno = new Aluno();
-                aluno.IdPessoa = (int)reader["AlunoId"];
+                aluno.PessoaId = (int)reader["AlunoId"];
                 aluno.Nome = (string)reader["Nome"];
                 aluno.Email = (string)reader["Email"];
                 aluno.Senha = (string)reader["Senha"];
