@@ -15,7 +15,7 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"EXEC AdicionarCurso @IdProfessor, @Nome, @Preco, @CargaHoraria";
-            //cmd.Parameters.AddWithValue("@IdProfessor",) //Preciso utilizar o Id de professor na procedure do banco
+            cmd.Parameters.AddWithValue("@IdProfessor", curso.IdPessoa);
             cmd.Parameters.AddWithValue("@Nome", curso.Nome);
             cmd.Parameters.AddWithValue("@Preco", curso.Preco);
             cmd.Parameters.AddWithValue("@CargaHoraria", curso.CargaHoraria);

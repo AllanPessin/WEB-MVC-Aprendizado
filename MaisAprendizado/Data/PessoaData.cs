@@ -13,18 +13,20 @@ namespace MaisAprendizado.Data
         public void Create(Pessoa Pessoa)
         {
             //cmd é um comando que permite executar uma query no Banco da Dados
-            SqlCommand cmd = new SqlCommand();
-            //conecta com o banco de dados
-            cmd.Connection = connectionDB;
-            //Cria a string SQL
-            cmd.CommandText = @"INSERT INTO Pessoas VALUES (@Nome, @Email, @DataNascimento, @Senha)";
-            //Colocando os dados recebidos no banco de dados
-            cmd.Parameters.AddWithValue("@Nome", Pessoa.Nome);
-            cmd.Parameters.AddWithValue("@Email", Pessoa.Email);
-            cmd.Parameters.AddWithValue("@DataNascimento", Pessoa.DataNascimento);
-            cmd.Parameters.AddWithValue("@Senha", Pessoa.Senha);
-            //Executa a string SQL
-            cmd.ExecuteNonQuery();
+            SqlCommand cmd = new SqlCommand();          
+                //conecta com o banco de dados
+                cmd.Connection = connectionDB;
+                //Cria a string SQL
+                cmd.CommandText = @"INSERT INTO Pessoas VALUES (@Nome, @Email, @DataNascimento, @Senha)";
+                //Colocando os dados recebidos no banco de dados
+                cmd.Parameters.AddWithValue("@Nome", Pessoa.Nome);
+                cmd.Parameters.AddWithValue("@Email", Pessoa.Email);
+                cmd.Parameters.AddWithValue("@DataNascimento", Pessoa.DataNascimento);
+                cmd.Parameters.AddWithValue("@Senha", Pessoa.Senha);
+                cmd.Parameters.AddWithValue("@Telefone", Pessoa.Telefone);
+                //Executa a string SQL
+                cmd.ExecuteNonQuery();
+            
         }
         //Read - SELECT
         public List<Pessoa> Read()
@@ -68,7 +70,7 @@ namespace MaisAprendizado.Data
             if (reader.Read())
             {
                 pessoa = new Pessoa();
-                pessoa.IdPessoa = (int)reader["IdPessoa"];
+                pessoa.PessoaId = (int)reader["IdPessoa"];
                 pessoa.Nome = (string)reader["Nome"];
                 pessoa.Email = (string)reader["Email"];
                 pessoa.DataNascimento = (string)reader["DataNascimento"];

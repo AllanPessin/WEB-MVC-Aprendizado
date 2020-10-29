@@ -18,12 +18,15 @@ namespace MaisAprendizado.Data
             try
             {
                 //String de conexão com o Banco de Dados
-                string strConexao = @"Data source = localhost;
-                                    Initial Catalog = Interdisciplinar;
-                                    Integrated Security=true;"; //Autentcação do Windows
-                                                                //User Id=sa; Password=dba; //Autenticação SQL Server
+                string strConexao = @"Data Source = DESKTOP-GEUFLE2\SQLEXPRESS;
+                                    Initial Catalog = DBinter;
+                                    Integrated Security=true;
+                                    "; //Autentcação do Windows
+                                                                //User Id=sa;  //Autenticação SQL Server
 
                 connectionDB = new SqlConnection(strConexao);
+
+                
 
                 connectionDB.Open();
             }

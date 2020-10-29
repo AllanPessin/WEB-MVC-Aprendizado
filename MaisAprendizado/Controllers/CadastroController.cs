@@ -12,5 +12,14 @@ namespace MaisAprendizado.Controllers
         {
             return View();
         }
+        public IActionResult Aluno()
+        {
+            return View();
+        }
+        public IActionResult Professor()
+        {
+            return View();
+        }
     }
+
 }

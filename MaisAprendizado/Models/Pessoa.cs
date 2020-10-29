@@ -8,7 +8,7 @@ namespace MaisAprendizado.Models
 {
     public class Pessoa
     {
-        public int? IdPessoa { get; set; }
+        public int? PessoaId { get; set; }
 
         [Display(Name = "Nome")]
         [Required(ErrorMessage = "Campo nome obrigatório!")]
@@ -31,14 +31,20 @@ namespace MaisAprendizado.Models
         [MinLength(6)]
         public string Senha { get; set; }
 
+
+        [Display(Name = "Telefone")]
+        [DataType(DataType.PhoneNumber)]
+        public string Telefone { get; set; }
+
         //Construtor
         public Pessoa()
         {
-            IdPessoa = 0;
+            PessoaId = 0;
             Nome = null;
             Email = null;
             DataNascimento = null;
             Senha = null;
+            Telefone = null;
         }
     }
 }

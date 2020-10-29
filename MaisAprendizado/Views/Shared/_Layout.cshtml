@@ -24,7 +24,7 @@
     <header>
         <!-- Inicio Cabeçalho -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background:#FFFFFF;">
-            <a class="navbar-brand" href="#"><img src="img/logo2.png" width="247"></a>
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index"><img src="img/logo2.png" width="247"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
                     aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                 <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,7 @@
 
             <div class="collapse navbar-collapse justify-content-end" id="conteudoNavbarSuportado">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#">
+                    <a class="nav-item nav-link" asp-controller="Home" asp-action="Index">
                         HOME <span class="sr-only">
                             (Página
                             atual)

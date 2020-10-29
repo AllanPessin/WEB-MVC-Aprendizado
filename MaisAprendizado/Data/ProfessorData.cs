@@ -32,7 +32,7 @@ namespace MaisAprendizado.Data
             while(reader.Read())
             {
                 Professor professor = new Professor();
-                professor.IdPessoa = (int)reader["PessoaId"];
+                professor.PessoaId = (int)reader["PessoaId"];
                 professor.Nome = (string)reader["Nome"];
                 professor.Email = (string)reader["Email"];
                 professor.DataNascimento = (string)reader["DataNascimento"];
@@ -54,7 +54,7 @@ namespace MaisAprendizado.Data
             if(reader.Read())
             {
                 professor = new Professor();
-                professor.IdPessoa = (int)reader["Id"];
+                professor.PessoaId = (int)reader["Id"];
                 professor.Nome = (string)reader["Nome"];
                 professor.Email = (string)reader["Email"];
                 professor.DataNascimento = (string)reader["DataNascimento"];
