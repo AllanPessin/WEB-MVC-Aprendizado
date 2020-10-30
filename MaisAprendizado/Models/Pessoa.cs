@@ -11,22 +11,22 @@ namespace MaisAprendizado.Models
         public int? PessoaId { get; set; }
 
         [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Campo nome obrigatório!")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [MinLength(3)]
         public string Nome { get; set; }
 
         [Display(Name = "Email")]
-        [Required(ErrorMessage = "E-mail obrigatóiro")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [Display(Name = "Data de nascimento")]
-        [Required(ErrorMessage = "Data de nascimento obrigatório")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.DateTime)]
         public string DataNascimento { get; set; }
 
         [Display(Name = "Senha")]
-        [Required(ErrorMessage = "Senha obrigatória")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.Password)]
         [MinLength(6)]
         public string Senha { get; set; }

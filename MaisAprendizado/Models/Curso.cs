@@ -12,17 +12,17 @@ namespace MaisAprendizado.Models
         public int IdPessoa { get; set; }
 
         [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Campo nome obrigatório")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [MinLength(3)]
         public string Nome { get; set; }
 
         [Display(Name = "Preço")]
-        [Required(ErrorMessage = "Campo preço obrigatório")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.Currency)]
         public decimal Preco { get; set; }
 
         [Display(Name = "Carga Horaria")]
-        [Required(ErrorMessage = "Carga horaria obrigatoria")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [DataType(DataType.Time)]
         public int CargaHoraria { get; set; }
     }

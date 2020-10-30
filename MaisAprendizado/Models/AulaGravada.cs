@@ -12,11 +12,11 @@ namespace MaisAprendizado.Models
         //public int CursoId { get; set; }
         
         [Display(Name = "Titulo")]
-        [Required(ErrorMessage = "Campo nome obrigatório")]
+        [Required(ErrorMessage = "Campo obrigatório")]
         [MinLength(3)]
         public string Titulo { get; set; }
 
-        [Display(Name = "Descirção")]
+        [Display(Name = "Descrição")]
         [MinLength(50)]
         [DataType(DataType.Text)]
         public string Descricao { get; set; }
