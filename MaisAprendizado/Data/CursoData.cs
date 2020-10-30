@@ -76,5 +76,14 @@ namespace MaisAprendizado.Data
             cmd.Parameters.AddWithValue("@CargaHoraria", curso.CargaHoraria);
             cmd.ExecuteNonQuery();
         }
+        //Delete - DELETE
+        public void Delete(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"DELETE FROM Cursos WHERE @id = CursoId";
+            cmd.Parameters.AddWithValue("@CursoId", id);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
