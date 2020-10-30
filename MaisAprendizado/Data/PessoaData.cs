@@ -110,8 +110,8 @@ namespace MaisAprendizado.Data
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = IdPessoa";
-            cmd.Parameters.AddWithValue("@IdPessoa", id);
+            cmd.CommandText = @"DELETE FROM Pessoas WHERE @id = PessoaId";
+            cmd.Parameters.AddWithValue("@PessoaId", id);
             cmd.ExecuteNonQuery();
         }
     }
