@@ -98,7 +98,7 @@ namespace MaisAprendizado.Data
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
             cmd.CommandText = @"UPDATE Pessoas SET Nome = @Nome, Email = @Email, DataNascimento = @DataNascimento,
-                                Senha = @senha WHERE IdPessao = @IdPessoa";
+                                Senha = @senha WHERE IdPessao = @PessoaId";
             cmd.Parameters.AddWithValue("@Nome", pessoa.Nome);
             cmd.Parameters.AddWithValue("@Email", pessoa.Email);
             cmd.Parameters.AddWithValue("@DataNascimento", pessoa.DataNascimento);

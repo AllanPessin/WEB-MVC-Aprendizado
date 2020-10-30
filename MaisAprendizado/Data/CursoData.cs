@@ -49,7 +49,8 @@ namespace MaisAprendizado.Data
             Curso curso = null;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"SELECT c.*, p.Nome AS Professor FROM Cursos c LEFT JOIN Pessoa p ON c.PessoaId = p.PessoaId WHERE Nome LIKE UPPER('@Nome%') AND c.PessoaId = @id";
+            cmd.CommandText = @"SELECT c.*, p.Nome AS Professor FROM Cursos c LEFT JOIN Pessoa p
+                                    ON c.PessoaId = p.PessoaId WHERE Nome LIKE UPPER('@Nome%') AND c.PessoaId = @id";
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -62,6 +63,18 @@ namespace MaisAprendizado.Data
                 pessoa.Nome = (string)reader["Professor"];
             }
             return curso;
+        }
+        //Update - UPDATE
+        public void Update(Curso curso)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"UPDATE Cursos SET Nome = @Nome, Preco = @Preco, CargaHoraria = @CargaHoraria 
+                                    WHERE CursoId = @IdCurso";
+            cmd.Parameters.AddWithValue("@Nome", curso.Nome);
+            cmd.Parameters.AddWithValue("@Preco", curso.Preco);
+            cmd.Parameters.AddWithValue("@CargaHoraria", curso.CargaHoraria);
+            cmd.ExecuteNonQuery();
         }
     }
 }
