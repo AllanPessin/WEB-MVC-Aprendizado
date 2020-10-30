@@ -43,7 +43,7 @@ namespace MaisAprendizado.Data
             return lista;            
         }
         //Read - SELECT (por nome)
-        public void Read(string nome, int id)
+        public Curso Read(string nome, int id)
         {
             Pessoa pessoa = null;
             Curso curso = null;
@@ -61,6 +61,7 @@ namespace MaisAprendizado.Data
                 curso.CargaHoraria = (int)reader["CargaHoraria"];//Mudar para string atualizar banco para
                 pessoa.Nome = (string)reader["Professor"];
             }
+            return curso;
         }
     }
 }
