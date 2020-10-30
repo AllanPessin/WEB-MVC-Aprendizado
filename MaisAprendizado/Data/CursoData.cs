@@ -42,5 +42,25 @@ namespace MaisAprendizado.Data
             }
             return lista;            
         }
+        //Read - SELECT (por nome)
+        public void Read(string nome, int id)
+        {
+            Pessoa pessoa = null;
+            Curso curso = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"SELECT c.*, p.Nome AS Professor FROM Cursos c LEFT JOIN Pessoa p ON c.PessoaId = p.PessoaId WHERE Nome LIKE UPPER('@Nome%') AND c.PessoaId = @id";
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                pessoa = new Pessoa();
+                curso = new Curso();
+                curso.IdCurso = (int)reader["CursoId"];
+                curso.Nome = (string)reader["Nome"];
+                curso.Preco = (decimal)reader["Preco"];
+                curso.CargaHoraria = (int)reader["CargaHoraria"];//Mudar para string atualizar banco para
+                pessoa.Nome = (string)reader["Professor"];
+            }
+        }
     }
 }
