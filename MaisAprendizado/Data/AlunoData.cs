@@ -29,7 +29,7 @@ namespace MaisAprendizado.Data
             lista = new List<Aluno>();
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"SELEC * FROM Alunos ORDER BY Nome";
+            cmd.CommandText = @"SELECT * FROM Alunos ORDER BY Nome";
             SqlDataReader reader = cmd.ExecuteReader();
             while(reader.Read())
             {

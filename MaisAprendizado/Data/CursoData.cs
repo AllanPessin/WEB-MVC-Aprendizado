@@ -1,8 +1,10 @@
 ﻿using MaisAprendizado.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
 namespace MaisAprendizado.Data
@@ -20,6 +22,25 @@ namespace MaisAprendizado.Data
             cmd.Parameters.AddWithValue("@Preco", curso.Preco);
             cmd.Parameters.AddWithValue("@CargaHoraria", curso.CargaHoraria);
             cmd.ExecuteNonQuery();
+        }
+        //Read - SELECT
+        public List<Curso> Read()
+        {
+            List<Curso> lista = null;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"SELECT * FROM Cursos ORDER BY Nome";
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Curso curso = new Curso();
+                curso.IdCurso = (int)reader["CursoId"];
+                curso.Nome = (string)reader["Nome"];
+                curso.Preco = (decimal)reader["Preco"];
+                curso.CargaHoraria = (int)reader["CargaHoraria"];
+                curso.IdPessoa = (int)reader["PessoaId"];
+            }
+            return lista;            
         }
     }
 }
