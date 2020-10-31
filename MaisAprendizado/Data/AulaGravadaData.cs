@@ -48,5 +48,14 @@ namespace MaisAprendizado.Data
             cmd.Parameters.AddWithValue("@Descricao", aula.Descricao);
             cmd.ExecuteNonQuery();
         }
+        //Delete - DELETE
+        public void Delete(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"DELETE FROM Aula_Gravada WHERE @id =AulaId";
+            cmd.Parameters.AddWithValue("@AulaId", id);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
