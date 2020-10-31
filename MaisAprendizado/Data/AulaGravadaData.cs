@@ -14,9 +14,10 @@ namespace MaisAprendizado.Data
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = connectionDB;
-            cmd.CommandText = @"INSERT INTO Aula_gravada VALUES(@AulaId, @CursoId, @Titulo,)";//Inserir tambem no curso espcifico
+            cmd.CommandText = @"INSERT INTO Aula_gravada VALUES(@AulaId, @CursoId, @Titulo, @Descricao)";//Inserir tambem no curso espcifico
             cmd.Parameters.AddWithValue("@AulaId", aula.IdAula);
-            cmd.Parameters.AddWithValue("@CursoId", aula.Titulo);
+            cmd.Parameters.AddWithValue("@Titulo", aula.Titulo);
+            cmd.Parameters.AddWithValue("@Descricao", aula.Descricao);
             cmd.ExecuteNonQuery();
         }
         //Read - SELECT
@@ -36,6 +37,16 @@ namespace MaisAprendizado.Data
                 aulagravada.Descricao = (string)reader["Descricao"];
             }
             return aulagravada;
+        }
+        //Update - UPDATE
+        public void Update(AulaGravada aula)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = connectionDB;
+            cmd.CommandText = @"UPDATE Aula_Gravada SET Titulo = @Titulo, Descricao = @Descricao";
+            cmd.Parameters.AddWithValue("@Titulo", aula.Titulo);
+            cmd.Parameters.AddWithValue("@Descricao", aula.Descricao);
+            cmd.ExecuteNonQuery();
         }
     }
 }
