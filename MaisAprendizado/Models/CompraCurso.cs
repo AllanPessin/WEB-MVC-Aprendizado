@@ -11,5 +11,6 @@ namespace MaisAprendizado.Models
         public int IdCurso { get; set; }
         public int Quantidade { get; set; }
         public int Status { get; set; }
+        public decimal Valor { get; set; }
     }
 }
