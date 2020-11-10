@@ -63,6 +63,15 @@ namespace MaisAprendizado
                 endpoints.MapControllerRoute(
                    name: "default",
                    pattern: "{controller=Professor}/{action=CadastroProfessor}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=TelaPrincipal}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=TelaPrincipal}/{action=CriarCurso}/{id?}");
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=TelaPrincipal}/{action=Perfil}/{id?}");
             });
         }
     }
